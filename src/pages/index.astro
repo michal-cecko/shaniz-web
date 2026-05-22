@@ -1,0 +1,129 @@
+---
+import '../main.css';
+
+import Clock from '../components/Icons/Clock.astro';
+import Globe from '../components/Icons/Globe.astro';
+import Phone from '../components/Icons/Phone.astro';
+import Van from '../components/Icons/Van.astro';
+import Item from '../components/Item.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+    <meta name="description" content="SHANIZ is a European based logistics company that specializes in reliable and efficient van-based logistics and transportation services. Whether you're a business in need of a regular shipments or an individual with special delivery needs, SHANIZ is your trusted partner in logistics.">
+    <meta name="keywords" content="shaniz, logistic, logistics, shaniz logistic, van based logistics, delivery, europe, shaniz contact">
+    <title>SHANIZ logistic</title>
+	</head>
+	<body class="bg-[#030921] text-white min-h-[100dvh]">
+    <header class="px-4 py-3">
+      <div class="max-w-[1280px] mx-auto pr-[50%]">
+        <img src="/logo.svg" alt="logo" class="max-w-[360px] w-full" />
+      </div>
+    </header>
+
+    
+    <main class="relative">
+      
+      <div id="hero" class="relative z-[-1] h-[60vh] isolate max-md:h-[300px]">
+        <div class="absolute left-[20%] top-[50%] bg-[#20365a] z-[5] w-40 aspect-square rounded-full grid place-items-center max-sm:hidden"
+         style="translate: -50% -50%; box-shadow: 0px 0px 200px 40px #85c2bc">
+          <Van />
+        </div>
+
+        <div class="absolute top-0 right-0 z-[2] w-full h-full max-sm:hidden"
+        style="background: linear-gradient(90deg, #030921 0%, #030921 26%, rgba(0,0,0,0) 100%)"></div>
+
+        <img src="/van.jpg" alt="van" class="object-cover h-full z-[1] absolute right-0" style="transform: scaleX(-1);" />
+      </div>
+
+      <div class="">
+        <div class="px-4 py-8 relative isolate z-[1]">
+          <div class="background-image absolute inset-0 z-[-1]"></div>
+
+          <div class="flex items-center gap-4 max-w-[1280px] justify-between mx-auto max-md:flex-col">
+            <section class="max-w-[440px] bg-[#03092180] p-4 rounded-xl max-md:max-w-none max-md:w-full">
+              <p class="mb-4 text-lg">At <b>SHANIZ</b>, we specialize in reliable and efficient van-based logistics and transportation services.</p>
+      
+              <p class="mb-4 text-lg">
+                Whether you're a business in need of a regular shipments or an individual with special delivery needs,
+                <b>SHANIZ</b> is your trusted partner in logistics. With our modern fleet and experienced drivers, we provide top-notch 
+                service that meets the highest industry standards.
+              </p>
+      
+              <p class="text-lg">Let <b>SHANIZ</b> take care of your transport needs so you can focus on what matters most.</p>
+            </section>
+    
+            <section class="min-w-[300px] bg-[#03092180] p-4 rounded-xl max-md:w-full">
+              <Item>
+                <Clock class="h-8" slot="icon" />
+                <div slot="content">
+                  <h3 class="uppercase font-bold text-xl mb-1 tracking-wide">Working hours</h3>
+                  <p>MON - SUN</p>
+                </div>
+              </Item>
+
+              <Item>
+                <Globe class="h-8" slot="icon" />
+                <div slot="content">
+                  <h3 class="uppercase font-bold text-xl mb-1 tracking-wide">Delivery</h3>
+                  <p>Europe based delivery</p>
+                </div>
+              </Item>
+
+              <Item>
+                <Phone class="h-8" slot="icon" />
+                <div slot="content">
+                  <a class="block" href="mailto:shaniz.sro.24@gmail.com">shaniz.sro.24@gmail.com</a>
+                  <a href="tel:+421 911 663 788">+421 911 663 788</a>
+                </div>  
+              </Item>
+            </section>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="max-w-[1280px] mx-auto px-4 py-8 text-center">
+        <p class="text-sm">2024 SHANIZ</p>
+      </div>
+    </footer>
+	</body>
+</html>
+
+<style>
+  #hero {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to bottom, rgb(3, 9, 33, 1), rgb(3, 9, 33, 0));
+      z-index: 2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(to top, rgb(3, 9, 33, 1), rgb(3, 9, 33, 0));
+      z-index: 2;
+    }
+  }
+  .background-image {
+    background: linear-gradient(to bottom, rgb(3, 9, 33, 1), rgb(3, 9, 33, 0.5)), url("/map.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+</style>
